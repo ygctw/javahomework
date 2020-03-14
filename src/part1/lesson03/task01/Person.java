@@ -7,7 +7,7 @@ public class Person {
 
     private String name;
 
-    public Person(String name, int age, Sex sex){
+    public Person(String name, int age, Sex sex) {
         this.name = name;
         this.age = age;
         this.sex = sex;
@@ -26,10 +26,9 @@ public class Person {
     }
 
     public void setAge(int ageValue) {
-        if(ageValue > 100 || ageValue < 0){
+        if (ageValue > 100 || ageValue < 0) {
             throw new IndexOutOfBoundsException("Age value must be in [0,100] range.");
-        }
-        else{
+        } else {
             this.age = ageValue;
         }
     }
@@ -38,8 +37,12 @@ public class Person {
         this.sex = sex;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String nameValue) {
+        if (nameValue.matches("[a-zA-Z]+")) {
+            this.name = nameValue;
+        } else {
+            throw new IllegalArgumentException("Name can contain latin letters only.");
+        }
     }
 
     @Override

@@ -5,13 +5,13 @@ public class Pet {
 
     private String name;
 
-    private int weight;
+    private double weight;
 
     private Person owner;
 
-    public Pet(int id, String name, int weight, Person owner){
+    public Pet(int id, String petName, double weight, Person owner) {
         this.id = id;
-        this.name = name;
+        this.name = petName;
         this.weight = weight;
         this.owner = owner;
     }
@@ -24,7 +24,7 @@ public class Pet {
         return name;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
@@ -40,7 +40,7 @@ public class Pet {
         this.owner = owner;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
